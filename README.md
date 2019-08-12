@@ -1,12 +1,14 @@
 # bot_ni
 Discord Bot
 
-`--recipe` - Returns a random recipe <br>
-`--recipe [SEARCH QUERY]` - Returns a recipe based on `SEARCH QUERY` <br>
-`??{NUTRITION TYPE} [SEARCH QUERY]` - Returns nutrition info (calories, carbs, fat, protein) for a grocery product <br>
-`--foodjoke` - Returns a food joke, completely harmless <br>
-`--roast` - Get destroyed by Gordon Ramsay <br>
-`??howto` - Displays usage information 
+| Command | Description |
+| ---------- | ----------------------- |
+| `--recipe` | Returns a random recipe |
+| `--recipe [SEARCH QUERY]` | Returns a recipe based on search query |
+| `??{NUTRITION TYPE} [SEARCH QUERY]` | Returns nutrition info (calories, carbs, fat, protein) for a grocery product |
+| `--foodjoke` | Returns a food joke, completely harmless |
+| `--roast` | Get destroyed by Gordon Ramsay |
+| `??howto` | Displays usage information |
 
 <br>
 <br>
