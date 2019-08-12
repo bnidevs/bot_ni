@@ -20,12 +20,12 @@ client.on('message', msg => {
 					}
 				}
 				console.log(q);
-				fetch('https://api.spoonacular.com/recipes/search?apiKey=393838a1ac2c4a5693bda94a1fb68e27&query=' + q + '&number=1')
+				fetch('https://api.spoonacular.com/recipes/search?apiKey=[INSERT SPOONACULAR APIKEY HERE]&query=' + q + '&number=1')
 					.then(resp => resp.json())
 					.then(function(data){
 						console.log(data);
 						const d = data['results'][0]['id'];
-						fetch('https://api.spoonacular.com/recipes/' + d + '/information?apiKey=393838a1ac2c4a5693bda94a1fb68e27')
+						fetch('https://api.spoonacular.com/recipes/' + d + '/information?apiKey=[INSERT SPOONACULAR APIKEY HERE]')
 						.then(resp => resp.json())
 						.then(function(data2){
 							msg.reply('Your search returned this:\n' + data2['sourceUrl']);
@@ -38,7 +38,7 @@ client.on('message', msg => {
 						msg.reply(recipefetcherr);
 					});
 			}else{
-				fetch('https://api.spoonacular.com/recipes/random?apiKey=393838a1ac2c4a5693bda94a1fb68e27&number=1')
+				fetch('https://api.spoonacular.com/recipes/random?apiKey=[INSERT SPOONACULAR APIKEY HERE]&number=1')
 					.then(resp => resp.json())
 					.then(function(data){
 						msg.reply(data['recipes'][0]['sourceUrl']);
@@ -58,7 +58,7 @@ client.on('message', msg => {
 					msg.reply('Where is the lamb sauce?');
 				});
 		}else if (msg.content.toLowerCase().indexOf("--foodjoke") >= 0){
-			fetch('https://api.spoonacular.com/food/jokes/random?apiKey=393838a1ac2c4a5693bda94a1fb68e27')
+			fetch('https://api.spoonacular.com/food/jokes/random?apiKey=[INSERT SPOONACULAR APIKEY HERE]')
 				.then(resp => resp.json())
 				.then(function(data){
 					msg.reply(data['text']);
@@ -82,11 +82,11 @@ client.on('message', msg => {
 			}
 
 			if(!b){
-				fetch('https://api.spoonacular.com/food/products/search?apiKey=393838a1ac2c4a5693bda94a1fb68e27&query=' + srchtm + '&number=1')
+				fetch('https://api.spoonacular.com/food/products/search?apiKey=[INSERT SPOONACULAR APIKEY HERE]&query=' + srchtm + '&number=1')
 					.then(resp => resp.json())
 					.then(function(data){
 						const ingredid = data['products'][0]['id'];
-						fetch('https://api.spoonacular.com/food/products/' + ingredid + '?apiKey=393838a1ac2c4a5693bda94a1fb68e27')
+						fetch('https://api.spoonacular.com/food/products/' + ingredid + '?apiKey=[INSERT SPOONACULAR APIKEY HERE]')
 						.then(resp => resp.json())
 						.then(function(data){
 							if(data['nutrition'].hasOwnProperty(nutrif) && data['nutrition'][nutrif] != null){
@@ -115,4 +115,4 @@ client.on('message', msg => {
 	}
 });
 
-client.login('NjA2NDk1MDQzMDQ1Mjk0MDky.XUL8ng.av3jDDEx-P-78Rshap8oEr-Cooc');
+client.login('[INSERT DISCORD BOT TOKEN HERE]');
