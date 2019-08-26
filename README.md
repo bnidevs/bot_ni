@@ -8,6 +8,7 @@ Discord Bot
 | `??{NUTRITION TYPE} [SEARCH QUERY]` | Returns nutrition info (calories, carbs, fat, protein) for a grocery product |
 | `--foodjoke` | Returns a food joke, completely harmless |
 | `--roast` | Get destroyed by Gordon Ramsay |
+| `--xkcd` | Posts an XKCD comic |
 | `??howto` | Displays usage information |
 
 <br>
