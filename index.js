@@ -2,13 +2,15 @@ const Discord = require('discord.js');
 const fetch = require('node-fetch');
 const client = new Discord.Client();
 
-// CHEF RESPONSES
 
 const recipefetcherr = 'Recipes unavailable at this time. Please try again later, or contact sysadmin for help.';
 const ingredfetcherr = 'Ingredients unavailable at this time. Please try again later, or contact sysadmin for help.';
 
 client.on('message', msg => {
 	if (!msg.author.bot){
+		
+		// CHEF RESPONSES
+		
 		if (msg.content.toLowerCase().indexOf('--recipe') >= 0){
 			const x = msg.content.indexOf('[');
 			const y = msg.content.indexOf(']');
@@ -103,6 +105,17 @@ client.on('message', msg => {
 						msg.reply(ingredfetcherr);
 					});
 			}
+			
+		// MISC RESPONSES
+		}else if (msg.content.toLowerCase().indexOf("--xkcd") >= 0){
+			fetch('http://xkcd.com/' + Math.floor(Math.random() * 2000 + 1); + '/info.0.json')
+				.then(resp => resp.json())
+				.then(function(data){
+					msg.reply(data['safe_title'], {files: data['img']});
+				})
+				.catch(function(error){
+					msg.reply("XKCD comics unavailable, please contact sysadmin for more info.");
+				});
 		}else{
 			const mtns = msg.mentions.users.array();
 			for (var k in mtns){
