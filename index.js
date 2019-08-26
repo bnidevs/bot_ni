@@ -108,7 +108,7 @@ client.on('message', msg => {
 			
 		// MISC RESPONSES
 		}else if (msg.content.toLowerCase().indexOf("--xkcd") >= 0){
-			fetch('http://xkcd.com/' + Math.floor(Math.random() * 2000 + 1) + '/info.0.json')
+			fetch('http://xkcd.com/' + Math.floor(Math.random() * 2000 + 1).toString() + '/info.0.json')
 				.then(resp => resp.json())
 				.then(function(data){
 					msg.reply(data['safe_title'], {files: data['img']});
